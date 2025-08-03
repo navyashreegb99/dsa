@@ -10,16 +10,16 @@
  * @return {ListNode}
  */
 var oddEvenList = function (head) {
-    if (!head || !head.next) return head;
-    let p1 = head;
-    let p2 = head.next;
-    let temp = p2;
-    while (p1 && p2 && p1.next && p2.next) {
-        p1.next = p1.next.next;
-        p2.next = p2.next.next;
-        p1 = p1.next;
-        p2 = p2.next;
-    }
-    p1.next = temp;
-    return head;
+  if (!head || !head.next) return head;
+  let odd = head;
+  let even = head.next;
+  let evenStart = even;
+  while (odd && even && odd.next && even.next) {
+    odd.next = odd.next.next;
+    even.next = even.next.next;
+    odd = odd.next;
+    even = even.next;
+  }
+  odd.next = evenStart;
+  return head;
 };
