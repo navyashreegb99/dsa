@@ -1,0 +1,45 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function (s) {
+  /* Approach 1
+    let splittedArray = s.trim().split(" ")
+    return splittedArray[splittedArray.length - 1].length; */
+
+  /*     // Approach2
+    //Trim extra spaces from end
+    let n = s.length - 1;
+    while (n >= 0) {
+        if (s[n] != ' ') break;
+        n--;
+    }
+
+    //n is at the position where word starts
+    //move till we find space at count the letters
+    let count = 0;
+    while (n >= 0) {
+        if (s[n] == ' ') break;
+        count++;
+        n--;
+    }
+    return count; */
+
+  // Approach2
+  //Trim extra spaces from end
+  let n = s.length - 1;
+  while (n >= 0) {
+    if (s[n] != " ") break;
+    n--;
+  }
+
+  //n is at the position where word starts
+  //move till we find space at count the letters
+  let count = 0;
+  while (n >= 0) {
+    if (s[n] == " ") break;
+    count++;
+    n--;
+  }
+  return count;
+};
