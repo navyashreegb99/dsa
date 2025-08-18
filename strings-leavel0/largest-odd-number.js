@@ -6,3 +6,5 @@ var largestOddNumber = function (num) {
   }
   return "";
 };
+//TC=O(n);
+//SC=O(1)
